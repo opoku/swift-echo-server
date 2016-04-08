@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9397BF811B641783007202B2 /* ServerSignals.c in Sources */ = {isa = PBXBuildFile; fileRef = 9397BF7F1B641783007202B2 /* ServerSignals.c */; };
 		93B0624B1B6204DF00C23A27 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B0624A1B6204DF00C23A27 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9397BF7E1B641783007202B2 /* HTTPServer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HTTPServer-Bridging-Header.h"; sourceTree = "<group>"; };
+		9397BF7F1B641783007202B2 /* ServerSignals.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ServerSignals.c; path = HTTPServer/ServerSignals.c; sourceTree = "<group>"; };
+		9397BF801B641783007202B2 /* ServerSignals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerSignals.h; path = HTTPServer/ServerSignals.h; sourceTree = "<group>"; };
 		93B062471B6204DF00C23A27 /* HTTPServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HTTPServer; sourceTree = BUILT_PRODUCTS_DIR; };
 		93B0624A1B6204DF00C23A27 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,8 +45,11 @@
 		93B0623E1B6204DF00C23A27 = {
 			isa = PBXGroup;
 			children = (
+				9397BF7F1B641783007202B2 /* ServerSignals.c */,
+				9397BF801B641783007202B2 /* ServerSignals.h */,
 				93B062491B6204DF00C23A27 /* HTTPServer */,
 				93B062481B6204DF00C23A27 /* Products */,
+				9397BF7E1B641783007202B2 /* HTTPServer-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +95,7 @@
 		93B0623F1B6204DF00C23A27 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = OPKoder;
 				TargetAttributes = {
@@ -118,6 +126,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9397BF811B641783007202B2 /* ServerSignals.c in Sources */,
 				93B0624B1B6204DF00C23A27 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,14 +215,21 @@
 		93B0624F1B6204DF00C23A27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HTTPServer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		93B062501B6204DF00C23A27 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HTTPServer-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -236,6 +252,7 @@
 				93B062501B6204DF00C23A27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
