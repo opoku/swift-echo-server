@@ -87,6 +87,12 @@ func source_handle () -> Void {
     print("nanananana")
 }
 
+func reg_signal_handler(sig: Int32, handler: ()->Void) {
+    signal(sig, SIG_IGN)
+    let source = dispatch_source_create(DISPATCH_SOURCE_TYPE_SIGNAL, UInt(sig), 0, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0))
+    dispatch_source_set_event_handler(source, handler)
+    dispatch_resume(source)
+}
 
 class Server: SessionDelegate {
     var sessions: [EchoSession] = []
@@ -96,7 +102,8 @@ class Server: SessionDelegate {
     }
     
     init() {
-        print("\(getpid())")
+        print("PID: \(getpid())")
+
         register_signal_handler(SIGHUP) { () -> Void in
             self.stop()
         }
